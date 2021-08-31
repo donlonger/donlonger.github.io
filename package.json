@@ -1,0 +1,54 @@
+{
+  "name": "rockpaperscissors",
+  "version": "1.0.0",
+  "description": "\\",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/donlonger/RockPaperScissors.git"
+  },
+  "author": "Michał Lachowski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/donlonger/RockPaperScissors/issues"
+  },
+  "homepage": "https://github.com/donlonger/RockPaperScissors#readme",
+  "dependencies": {
+    "concat": "^1.0.3",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^5.0.0",
+    "sass": "^1.38.0",
+    "autoprefixer": "^9.8.6",
+    "cssnano": "^4.1.10",
+    "gulp": "^4.0.2",
+    "gulp-nunjucks-render": "^2.2.3",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^9.0.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-terser": "^1.4.0",
+    "imagemin-jpegtran": "^7.0.0",
+    "imagemin-pngquant": "^9.0.1",
+    "jquery": "^3.5.1",
+    "masonry-layout": "^4.2.2",
+    "node-sass": "^4.14.1"
+  },
+  "devDependencies": {
+    "gulp-sourcemaps": "^3.0.0",
+    "autoprefixer": "^9.8.6",
+    "cssnano": "^4.1.10",
+    "gulp-concat": "^2.6.1",
+    "gulp-nunjucks-render": "^2.2.3",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^9.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-terser": "^1.4.0",
+    "imagemin-jpegtran": "^7.0.0",
+    "imagemin-pngquant": "^9.0.1",
+    "jquery": "^3.5.1",
+    "masonry-layout": "^4.2.2",
+    "node-sass": "^4.14.1"
+  }
+}

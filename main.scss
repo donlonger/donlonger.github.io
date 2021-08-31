@@ -1,0 +1,141 @@
+body {
+    background: yellow;
+    margin: 0 auto;
+    max-width: 1600px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 36px;
+
+    #image-wrapper {
+        display: grid;
+        width: 1500px;
+        margin: 0 auto;
+        grid-template-columns:repeat(5, 20%);
+        grid-template-rows:repeat(5, 20%);
+        height: 92vh;
+
+        .computer {
+            grid-column-start: 3;
+            grid-row-start: 1;
+            align-self: end;
+            margin-bottom: 20px;
+            
+            span {
+                margin-bottom: 20px;
+            }
+        }
+
+        #computerScore, #userScore {
+            display: flex;
+            justify-content: center;
+        }
+
+        .user {
+            grid-column-start: 3;
+            grid-row-start: 4;
+            align-self: end;
+            justify-self: center;
+            margin-bottom: 20px;
+        }
+
+        .item {
+            cursor: pointer;
+            justify-self: center;
+            transition: .3s all;
+
+            &:hover {
+                transform:scale(1.05);
+            }
+
+            &.hide {
+                cursor: initial;
+
+                &:hover {
+                    transform: initial;
+                }
+            }
+
+            &.scissors-sizer {
+                height: 200px;
+                width: 200px;
+            }
+
+            &.paper-sizer {
+                height: 200px;
+                width: 200px;
+            }
+
+            &.rock-sizer {
+                height: 200px;
+                width: 200px;
+            }
+            
+        }
+
+
+        #rock {
+            background: url(/img/rock.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            grid-column-start: 2;
+            grid-row-start: 5;
+
+            &.userChoiceStyle {
+                display: flex;
+                grid-column-start: 3;
+                grid-row-start: 3;
+            }
+        }
+        #paper {
+            background: url(/img/paper.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            grid-column-start: 3; 
+            grid-row-start: 5;
+
+            &.userChoiceStyle {
+                display: flex;
+                grid-column-start: 3;
+                grid-row-start: 3;
+            }
+        }
+        #scissors  {
+            background: url(/img/scissors.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            grid-row-start: 5;
+            grid-column-start: 4;
+            
+            &.userChoiceStyle {
+                display: flex;
+                grid-column-start: 3;
+                grid-row-start: 3;
+            }
+        }
+
+        .computerrock {
+            background: url(/img/rock.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            grid-row-start: 2;
+            grid-column-start: 3;
+        }
+        .computerpaper {
+            background: url(/img/paper.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            grid-row-start: 2;
+            grid-column-start: 3;
+        }
+        .computerscissors {
+            background: url(/img/scissors.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            grid-row-start: 2;
+            grid-column-start: 3;
+        }
+    }
+}        
+
