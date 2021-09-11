@@ -1,27 +1,104 @@
 body {
-    background: yellow;
+    background: url("img/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
     margin: 0 auto;
     max-width: 1600px;
     font-family: 'Press Start 2P', cursive;
-    font-size: 36px;
+    font-size: 26px;
+    text-align: center;
+    height: 100vh;  
 
-    #image-wrapper {
-        display: grid;
+    #loader {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        top: 40%;
+        left: 45%;
+        transform: translate(-50%, -50%);
+        transition: .1s;
+    }
+
+    #content-wrapper {
+        display: none;
         width: 1500px;
         margin: 0 auto;
         grid-template-columns:repeat(5, 20%);
         grid-template-rows:repeat(5, 20%);
-        height: 92vh;
+        height: 100vh; 
 
-        .computer {
+        #text-wrapper {
+            grid-column: 2/5;
+            grid-row: 2/3;
+            display: none;
+            grid-template-columns:repeat(3, 1fr);
+            grid-template-rows:repeat(2, 50%);
+            transition: .4 ease-in;
+        }
+
+        #computer {
             grid-column-start: 3;
-            grid-row-start: 1;
+            grid-row-start: 2;
             align-self: end;
-            margin-bottom: 20px;
+            margin-bottom: 40px;
             
             span {
                 margin-bottom: 20px;
             }
+        }
+
+        #user {
+            grid-column-start: 1;
+            grid-row-start: 2;
+            align-self: end;
+            justify-self: center;
+            margin-bottom: 40px;
+        } 
+
+        #tie {
+            grid-column-start: 2;
+            grid-row-start: 2;
+            align-self: end;
+            font-size: 18px;
+            margin-bottom: 40px; 
+        }
+
+        #history {
+            width: 155px;
+            overflow: hidden;
+            font-size: 16px;
+            grid-column-start: 3;
+            grid-row-start: 3;
+            display: flex;
+            margin: 0 auto;
+            align-self: center;
+            transition: .3s linear;
+
+            p {
+                background: rgba(162, 163, 163, 0.8);
+                padding: 5px;
+                transform: .3s all;
+                transition: .3s linear;
+            }
+        }
+
+        #history-description {
+            grid-column-start: 2;
+            grid-row-start: 3;
+            font-size: 8px;
+            margin-top: 70px;
+        }
+
+        #roundsCounter {
+            grid-column-start: 2;
+            grid-row-start: 1;
+            font-size: 20px;
+            margin-top: 25px;
+        }
+        #roundHeader {
+            grid-column-start: 2;
+            grid-row-start: 1;
+            font-size: 20px;
         }
 
         #computerScore, #userScore {
@@ -29,12 +106,11 @@ body {
             justify-content: center;
         }
 
-        .user {
+        #output-message {
             grid-column-start: 3;
-            grid-row-start: 4;
-            align-self: end;
-            justify-self: center;
-            margin-bottom: 20px;
+            grid-row-start: 1;
+            font-size: 24px;
+            align-self: center;
         }
 
         .item {
@@ -46,6 +122,13 @@ body {
                 transform:scale(1.05);
             }
 
+            &.userChoiceStyle {
+                &:hover {
+                    transform:scale(1.0);
+                    cursor: inherit;
+                }
+            }
+
             &.hide {
                 cursor: initial;
 
@@ -54,87 +137,67 @@ body {
                 }
             }
 
-            &.scissors-sizer {
+            &.scissors-sizer, &.paper-sizer, &.rock-sizer  {
                 height: 200px;
                 width: 200px;
-            }
+            }   
+        }
 
-            &.paper-sizer {
-                height: 200px;
-                width: 200px;
-            }
-
-            &.rock-sizer {
-                height: 200px;
-                width: 200px;
-            }
-            
+        .icon-wrapper {
+            grid-column-start: 2;
+            grid-row-start: 4;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            padding-top: 50px;
         }
 
 
         #rock {
-            background: url(/img/rock.png);
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            grid-column-start: 2;
-            grid-row-start: 5;
-
-            &.userChoiceStyle {
-                display: flex;
-                grid-column-start: 3;
-                grid-row-start: 3;
-            }
+            background: url(img/rock.png);
         }
+
+
         #paper {
-            background: url(/img/paper.png);
+            background: url(img/paper.png);
+        }
+
+        #scissors  {
+            background: url(img/scissors.png);
+        }
+
+        #paper, #scissors, #rock {
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
-            grid-column-start: 3; 
-            grid-row-start: 5;
 
             &.userChoiceStyle {
                 display: flex;
-                grid-column-start: 3;
+                grid-column-start: 2;
                 grid-row-start: 3;
             }
-        }
-        #scissors  {
-            background: url(/img/scissors.png);
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            grid-row-start: 5;
-            grid-column-start: 4;
-            
-            &.userChoiceStyle {
-                display: flex;
-                grid-column-start: 3;
-                grid-row-start: 3;
+
+            &.icon {
+                width: 70px;
+                height: 70px;
             }
         }
 
         .computerrock {
-            background: url(/img/rock.png);
-            background-repeat: no-repeat;
-            background-size: cover;
-            grid-row-start: 2;
-            grid-column-start: 3;
+            background: url(img/rock.png);
         }
         .computerpaper {
-            background: url(/img/paper.png);
-            background-repeat: no-repeat;
-            background-size: cover;
-            grid-row-start: 2;
-            grid-column-start: 3;
+            background: url(img/paper.png);
         }
         .computerscissors {
-            background: url(/img/scissors.png);
+            background: url(img/scissors.png);
+        }
+
+        .computerrock, .computerpaper, .computerscissors {
             background-repeat: no-repeat;
             background-size: cover;
-            grid-row-start: 2;
-            grid-column-start: 3;
+            grid-row-start: 3;
+            grid-column-start: 4;
         }
     }
 }        

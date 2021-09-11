@@ -1,0 +1,171 @@
+body {
+  background: url("img/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  max-width: 1600px;
+  font-family: "Press Start 2P", cursive;
+  font-size: 26px;
+  text-align: center;
+  height: 100vh;
+}
+body #loader {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 40%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  transition: 0.1s;
+}
+body #content-wrapper {
+  display: none;
+  width: 1500px;
+  margin: 0 auto;
+  grid-template-columns: repeat(5, 20%);
+  grid-template-rows: repeat(5, 20%);
+  height: 100vh;
+}
+body #content-wrapper #text-wrapper {
+  grid-column: 2/5;
+  grid-row: 2/3;
+  display: none;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 50%);
+  transition: 0.4 ease-in;
+}
+body #content-wrapper #computer {
+  grid-column-start: 3;
+  grid-row-start: 2;
+  align-self: end;
+  margin-bottom: 40px;
+}
+body #content-wrapper #computer span {
+  margin-bottom: 20px;
+}
+body #content-wrapper #user {
+  grid-column-start: 1;
+  grid-row-start: 2;
+  align-self: end;
+  justify-self: center;
+  margin-bottom: 40px;
+}
+body #content-wrapper #tie {
+  grid-column-start: 2;
+  grid-row-start: 2;
+  align-self: end;
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+body #content-wrapper #history {
+  width: 155px;
+  overflow: hidden;
+  font-size: 16px;
+  grid-column-start: 3;
+  grid-row-start: 3;
+  display: flex;
+  margin: 0 auto;
+  align-self: center;
+  transition: 0.3s linear;
+}
+body #content-wrapper #history p {
+  background: rgba(162, 163, 163, 0.8);
+  padding: 5px;
+  transform: 0.3s all;
+  transition: 0.3s linear;
+}
+body #content-wrapper #history-description {
+  grid-column-start: 2;
+  grid-row-start: 3;
+  font-size: 8px;
+  margin-top: 70px;
+}
+body #content-wrapper #roundsCounter {
+  grid-column-start: 2;
+  grid-row-start: 1;
+  font-size: 20px;
+  margin-top: 25px;
+}
+body #content-wrapper #roundHeader {
+  grid-column-start: 2;
+  grid-row-start: 1;
+  font-size: 20px;
+}
+body #content-wrapper #computerScore, body #content-wrapper #userScore {
+  display: flex;
+  justify-content: center;
+}
+body #content-wrapper #output-message {
+  grid-column-start: 3;
+  grid-row-start: 1;
+  font-size: 24px;
+  align-self: center;
+}
+body #content-wrapper .item {
+  cursor: pointer;
+  justify-self: center;
+  transition: 0.3s all;
+}
+body #content-wrapper .item:hover {
+  transform: scale(1.05);
+}
+body #content-wrapper .item.userChoiceStyle:hover {
+  transform: scale(1);
+  cursor: inherit;
+}
+body #content-wrapper .item.hide {
+  cursor: initial;
+}
+body #content-wrapper .item.hide:hover {
+  transform: initial;
+}
+body #content-wrapper .item.scissors-sizer, body #content-wrapper .item.paper-sizer, body #content-wrapper .item.rock-sizer {
+  height: 200px;
+  width: 200px;
+}
+body #content-wrapper .icon-wrapper {
+  grid-column-start: 2;
+  grid-row-start: 4;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 50px;
+}
+body #content-wrapper #rock {
+  background: url(img/rock.png);
+}
+body #content-wrapper #paper {
+  background: url(img/paper.png);
+}
+body #content-wrapper #scissors {
+  background: url(img/scissors.png);
+}
+body #content-wrapper #paper, body #content-wrapper #scissors, body #content-wrapper #rock {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+body #content-wrapper #paper.userChoiceStyle, body #content-wrapper #scissors.userChoiceStyle, body #content-wrapper #rock.userChoiceStyle {
+  display: flex;
+  grid-column-start: 2;
+  grid-row-start: 3;
+}
+body #content-wrapper #paper.icon, body #content-wrapper #scissors.icon, body #content-wrapper #rock.icon {
+  width: 70px;
+  height: 70px;
+}
+body #content-wrapper .computerrock {
+  background: url(img/rock.png);
+}
+body #content-wrapper .computerpaper {
+  background: url(img/paper.png);
+}
+body #content-wrapper .computerscissors {
+  background: url(img/scissors.png);
+}
+body #content-wrapper .computerrock, body #content-wrapper .computerpaper, body #content-wrapper .computerscissors {
+  background-repeat: no-repeat;
+  background-size: cover;
+  grid-row-start: 3;
+  grid-column-start: 4;
+}

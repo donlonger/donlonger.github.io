@@ -6,32 +6,48 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/main.css">
+        <link rel="stylesheet" href="main.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Russo+One&display=swap" rel="stylesheet">
     </head>
     <body>
-        <div id="image-wrapper">
-            <div class="computer">
-                <span>Computer</span>
-                <div id="computerScore">0</div>
+        <div id="loader"></div>
+        <div id="content-wrapper">
+            <div id = "text-wrapper">
+                <div id="roundHeader">
+                    Round
+                </div>
+                <div id="roundsCounter"></div>
+                <div id="computer">
+                    <span>Computer</span>
+                    <div id="computerScore">0</div>
+                </div>
+                <div id="tie">
+                    <span>Ties</span>
+                    <div id="tieScore">0</div> 
+                </div>
+
+                <div id="user">
+                    <span>You</span>
+                    <div id="userScore">0</div>
+                </div>
+                <div id="history-description">Last 6 rounds</div>
             </div>
-            <div class="user">
-                <span>You</span>
-                <div id="userScore">0</div>
+            <div class="icon-wrapper">
+                <div onclick="playRound(userPlay('rock'), computerPlay())" id="rock" class="item rock-sizer icon"></div>
+                <div onclick="playRound(userPlay('paper'), computerPlay())" id="paper" class="item paper-sizer icon"></div>
+                <div onclick="playRound(userPlay('scissors'), computerPlay())" id="scissors" class="item scissors-sizer icon"></div> 
             </div>
-            <div onclick="playRound(userPlay('rock'), computerPlay())" id="rock" class="item rock-sizer"></div>
-            <div onclick="playRound(userPlay('paper'), computerPlay())" id="paper" class="item paper-sizer"></div>
-            <div onclick="playRound(userPlay('scissors'), computerPlay())" id="scissors" class="item scissors-sizer"></div> 
             <div id="userChoice" class="userChoiceStyle"></div>
             <div id="comprock" class="computerrock hide item rock-sizer" style="display: none;"></div>
             <div id="comppaper" class="computerpaper hide item paper-sizer" style="display: none;"></div>
             <div id="compscissors" class="computerscissors hide item scissors-sizer" style="display: none;"></div>
+            <div id="output-message"></div>
+            <div id="history"></div>
         </div>
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
-
-        <script src="/script.js" async defer></script>
+        <script src="script.js" async defer></script>
     </body>
-</html>
+</html> 
